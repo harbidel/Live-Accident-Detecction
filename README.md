@@ -1,1 +1,1 @@
-# Live-Accident-Detecction
+# Live-Accident-Detection
