@@ -28,7 +28,7 @@ Live-Accident-Detecction/
 │   └── raccoon_labels.csv           # master annotations (165 boxes, class "accident")
 │   └── train_labels.csv             # legacy 157/8 split — superseded by the notebook
 │   └── test_labels.csv
-├── images/                          # ← YOU ADD THIS: the 163 source images (not tracked)
+├── images/                          # the 163 source images (not tracked)
 ├── images_normal/                   # ← optional: accident-free frames (negatives)
 ├── labelImg/                        # bundled annotation GUI, for re-labelling
 ├── bin/protoc.exe                   # legacy TF Object Detection API tooling
@@ -37,16 +37,6 @@ Live-Accident-Detecction/
 ├── runs/                            # generated training outputs (gitignored)
 └── alerts/                          # generated alert clips + alerts.jsonl
 ```
-
-Two housekeeping notes:
-
-- **`data/raccoon_labels.csv` is misnamed.** It contains accident annotations — the filename
-  is a leftover from the [raccoon detector][raccoon] tutorial this project was scaffolded
-  from. Rename it to `accident_labels.csv`; the notebook accepts either name.
-- **`bin/` and `include/` are legacy.** They belong to the TensorFlow Object Detection API
-  workflow (`protoc` compiles the API's `.proto` files). The current pipeline uses Ultralytics
-  YOLO and does not need them. Keep them only if you intend to maintain the TF path in
-  parallel; otherwise deleting them removes ~3.6 MB and a Windows-only binary from the repo.
 
 ---
 
