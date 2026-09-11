@@ -206,9 +206,6 @@ whole scene.
 
 ---
 
-
----
-
 ## Roadmap
 
 Ordered by expected impact:
