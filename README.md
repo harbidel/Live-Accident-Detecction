@@ -206,25 +206,6 @@ whole scene.
 
 ---
 
-## Known limitations
-
-These are real and worth stating plainly:
-
-1. **The labels describe pictures, not accidents.** With a median box covering 71% of the frame
-   and 53% covering over 70%, most annotations effectively say *"this image contains a crash"*
-   rather than *"the crash is here."* A model can score well on mAP against whole-frame ground
-   truth while being useless to an operator, and it will not transfer to a wide CCTV view where
-   a collision occupies a small part of the scene.
-2. **No negative examples.** Every image contains an accident, so the model never learns what
-   normal traffic looks like. Expect false alarms until `images_normal/` is populated.
-3. **Dataset size.** 163 images cannot cover night, rain, glare, fog, headlight bloom, dense
-   traffic, or varied camera angles. Metrics on a 16-image test split have very wide error bars.
-4. **Domain gap.** The images look like cropped press and dashcam photos. Fixed CCTV footage —
-   high mounting angle, wide field of view, fisheye distortion, motion blur, compression
-   artefacts — looks nothing like them.
-5. **Single-frame reasoning.** A collision is defined by *dynamics*: sudden deceleration,
-   intersecting trajectories, debris scatter. A per-frame appearance detector cannot see any of
-   that, and a stationary post-crash scene looks much like parked cars.
 
 ---
 
